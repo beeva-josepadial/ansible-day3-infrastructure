@@ -12,7 +12,12 @@
       timezone:
         name: "Europe/Madrid"
 
-    # - name: "install openjdk"
+    - name: "install openjdk"
+      yum:
+        name: "java-1.8.0-openjdk"
+        state: "installed"
 
     # - name: "install node"
+
+    # - name: "node user"
 
