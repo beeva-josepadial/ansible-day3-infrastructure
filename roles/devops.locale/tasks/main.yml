@@ -1,0 +1,7 @@
+---
+- name: "configure {{ LANG }} locale"
+  lineinfile:
+    dest: "/etc/locale.conf"
+    line: "LANG={{ LANG }}"
+    regexp: "^LANG="
+

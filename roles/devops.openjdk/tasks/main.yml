@@ -1,0 +1,6 @@
+---
+- name: "install openjdk {{ JAVA_VERSION }}"
+  yum:
+    name: "java-{{ JAVA_VERSION }}-openjdk"
+    state: "installed"
+

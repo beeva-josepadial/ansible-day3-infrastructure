@@ -3,22 +3,13 @@
   vars_files:
     - vars/main.yml
   become: true
+
+  roles:
+    - { role: "roles/devops.locale" }
+    - { role: "roles/devops.timezone" }
+    - { role: "roles/devops.openjdk" }
+
   tasks:
-    - name: "configure locale"
-      lineinfile:
-        dest: "/etc/locale.conf"
-        line: "LANG=es_ES.UTF-8"
-        regexp: "^LANG="
-
-    - name: "configure timezone"
-      timezone:
-        name: "Europe/Madrid"
-
-    - name: "install openjdk"
-      yum:
-        name: "java-1.8.0-openjdk"
-        state: "installed"
-
     - name: "create tomcat group"
       group:
         name: "tomcat"
