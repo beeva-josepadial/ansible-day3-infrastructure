@@ -47,6 +47,13 @@
         group: "root"
       notify: "restart tomcat"
 
+    - name: "enable and start tomcat service"
+      systemd:
+        name: "tomcat"
+        state: "started"
+        daemon_reload: yes
+        enabled: yes
+
     - name: "install sample war"
       copy:
         src: "sample.war"
