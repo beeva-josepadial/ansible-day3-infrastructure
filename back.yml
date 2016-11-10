@@ -1,10 +1,7 @@
 ---
 - hosts: bastion
-  vars:
-    tomcat_dir: "apache-tomcat-8.5.6"
-    tomcat_url: "http://apache.rediris.es/tomcat/tomcat-8/v8.5.6/bin/apache-tomcat-8.5.6.tar.gz"
-    TOMCAT_MEMORY_MAX: 512
-    TOMCAT_MEMORY_MIN: 256
+  vars_files:
+    - vars/main.yml
   become: true
   tasks:
     - name: "configure locale"
