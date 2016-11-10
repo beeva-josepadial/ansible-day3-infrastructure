@@ -40,5 +40,8 @@
         src: "/opt/{{node_dir}}/bin/node"
         dest: "/usr/bin/node"
 
-    # - name: "node user"
+    - name: "create node user"
+      user:
+        name: "node"
+        state: "present"
 
