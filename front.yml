@@ -1,0 +1,16 @@
+---
+- hosts: bastion
+  become: true
+  tasks:
+    - name: "configure locale"
+      lineinfile:
+        dest: "/etc/locale.conf"
+        line: "LANG=es_ES.UTF-8"
+        regexp: "^LANG="
+
+    # - name: "configure timezone"
+
+    # - name: "install openjdk"
+
+    # - name: "install node"
+
