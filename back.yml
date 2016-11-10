@@ -46,6 +46,7 @@
         mode: "0755"
         owner: "root"
         group: "root"
+      notify: "restart tomcat"
 
     - name: "install sample war"
       copy:
@@ -54,10 +55,6 @@
         owner: "tomcat"
         group: "tomcat"
       notify: "restart tomcat"
-  handlers:
-    - name: "restart tomcat"
-      systemd:
-        daemon_reload: yes
-        name: "tomcat"
-        state: "restarted"
 
+  handlers:
+    - include: "handlers/main.yml"

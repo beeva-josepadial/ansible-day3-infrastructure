@@ -4,9 +4,3 @@
     daemon_reload: yes
     name: "tomcat"
     state: "restarted"
-
-# ---
-# - name: Restart nginx
-#   service:
-#     name: nginx
-#     state: restarted
