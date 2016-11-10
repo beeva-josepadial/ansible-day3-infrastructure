@@ -8,7 +8,9 @@
         line: "LANG=es_ES.UTF-8"
         regexp: "^LANG="
 
-    # - name: "configure timezone"
+    - name: "configure timezone"
+      timezone:
+        name: "Europe/Madrid"
 
     # - name: "install openjdk"
 
